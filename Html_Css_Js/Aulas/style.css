@@ -1,10 +1,37 @@
-#title, .subtitle, .post_title {
-    color:red;
-}
 .post_title{
     font-size: 16px;
     font-style: italic;
 }
+.post {
+    padding: 15px 10px 5px 0;
+    border : 2px solid;
+}
+.post_imagem {
+    margin-bottom: 15px;
+}
 body {
-    background-color: rgb(255, 255, 255);
+    font-family: Verdana;
+    margin: auto;
+    max-width: 900px;
+    background: #f7f7f7;
+}
+#title {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+a{
+    text-decoration: line-through;
+    color: #505050;
+}
+ul {
+    list-style-type: square;
+}
+img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.post_content {
+    margin: 0;
+
 }
