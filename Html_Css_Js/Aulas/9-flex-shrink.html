@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex Shrink</title>
+    <style>
+      .flex-container{
+        display: flex;
+        border: 2px solid black;
+        max-width: 350px;
+      }
+      .item{
+        margin: 5px;
+        background-color: aqua;
+        font-size: 24px;
+        text-align: center;
+      }
+      .s-1{
+        flex-shrink: 1;
+      }
+      .fg-1{
+        flex-grow: 1;
+      }
+      .s-0{
+        flex-shrink: 0;
+        flex-basis: 100px;
+      }
+      .s-2{
+        flex-shrink: 2;
+        flex-basis: 100px;
+      }
+      .s-3{
+        flex-shrink: 3;
+        flex-basis: 100px;
+      }
+    </style>
+</head>
+<body>
+    <p>flex-shrink: 1</p>
+    <div class="flex container">
+        <div class="item s-1 fg-1">Hi</div>
+        <div class="item s-1 fg-1">Your name?</div>
+        <div class="item s-0 fg-1">Tenki no Ko</div>
+        <div class="item s-1 fg-1">Horimyia</div>
+        <div class="item s-2 fg-1">Bakemonogatari</div>
+        <div class="item s-3 fg-1">The Silente Voice</div>
+    </div>
+    <p>flex-shrink: 0 / basis 100px</p>
+    <div class="flex container">
+        <div class="item s-0 fg-1">Hi</div>
+        <div class="item s-0 fg-1">Your name?</div>
+        <div class="item s-0 fg-1">Tenki no Ko</div>
+        <div class="item s-1 fg-1">Horimyia</div>
+        <div class="item s-2 fg-1">Bakemonogatari</div>
+        <div class="item s-3 fg-1">The Silente Voice</div>
+    </div>
+    <p>flex-shrink: 2 / basis 100px</p>
+    <div class="flex container">
+        <div class="item s-2 fg-1">Hi</div>
+        <div class="item s-2 fg-1">Your name?</div>
+        <div class="item s-0 fg-1">Tenki no Ko</div>
+        <div class="item s-1 fg-1">Horimyia</div>
+        <div class="item s-2 fg-1">Bakemonogatari</div>
+        <div class="item s-3 fg-1">The Silente Voice</div>
+    </div>
+    <p>flex-shrink: 3 / basis 100px</p>
+    <div class="flex container">
+        <div class="item s-3 fg-1">Hi</div>
+        <div class="item s-3 fg-1">Your name?</div>
+        <div class="item s-0 fg-1">Tenki no Ko</div>
+        <div class="item s-1 fg-1">Horimyia</div>
+        <div class="item s-2 fg-1">Bakemonogatari</div>
+        <div class="item s-3 fg-1">The Silente Voice</div>
+    </div>
+</body>
+</html>
