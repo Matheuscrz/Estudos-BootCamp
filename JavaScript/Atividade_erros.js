@@ -10,7 +10,7 @@ function validaArray(array, num){
         if(err instanceof ReferenceError) console.log('ReferenceError: ' + err.message);
         if(err instanceof TypeError) console.log('TypeError: ' + err.message);
         if(err instanceof RangeError) console.log('RangeError: ' + err.message);
-        return console.log("Erro inesperado", + err);
+        return "Erro inesperado", + err;
     }
 }
-console.log(validaArray([1, 2, 3, 4, 5],5))
+console.log(validaArray())
