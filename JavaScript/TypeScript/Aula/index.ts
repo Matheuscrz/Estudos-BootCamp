@@ -98,11 +98,27 @@ $.fn.extend({
     novaFuncao(){
         console.log('Chamou a nova função');
     }
-});*/
-$('body').novaFuncao();
+});
+$('body').novaFuncao();*/
 
 //Export
 /*export const numero = 1;*/
 //Import
 /*import { numero } from './index.js';
 console.log(numero);*/
+//Omit
+interface Pessoa {
+    nome: string;
+    idade: number;
+    nacionalidade: string;
+}
+
+interface Brasileiro extends Omit<Pessoa, 'nacionalidade'> {
+
+}
+
+const Brasileiro: Brasileiro = {
+    nome: 'João',
+    idade: 20
+}
+//Douglasmoura.dev -site
