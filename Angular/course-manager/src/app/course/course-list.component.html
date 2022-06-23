@@ -8,21 +8,23 @@
       <th>Price</th>
       <th>Code</th>
       <th>Duration</th>
-      <th>Rating</th>
       <th>Release Date</th>
+      <th>Rating</th>
       <th>Options</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let course of courses"> <!--Sintaxe ANgular para fazer o tr repetir linha a linha. Criar variável de templete local para ser representado para cada elemento. -->
-      <td>{{course.imageUrl}}</td> <!--Para exibir-->
+      <td><img [src]="course.imageUrl" width="40" height="40"></td> <!--Para exibir-->
       <td>{{course.name}}</td>
       <td>{{course.id}}</td>
       <td>{{course.price}}</td>
       <td>{{course.code}}</td>
       <td>{{course.duration}}</td>
-      <td>{{course.rating}}</td>
       <td>{{course.releaseDate}}</td>
+      <td>
+        <app-start [rating]="course.rating"></app-start>
+      </td>
       <td></td>
     </tr>
   </tbody>
