@@ -13,5 +13,9 @@ public class Main {
         Mensagem.textoMensagem(4);
         System.out.println("Empréstimo");
         Emprestimo.calcula(1000,12,0.25);
+        System.out.println("Sobrecarga");
+        Quadrilatero.area(10);
+        Quadrilatero.area(10, 2);
+        Quadrilatero.area(2, 2, 5);
     }
 }
