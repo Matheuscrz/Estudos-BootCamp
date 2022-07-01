@@ -1,7 +1,6 @@
 package Repetition;
 
 import java.util.Scanner;
-import java.util.Scanner;
 
 public class nome {
    public static void main(String[] args){
