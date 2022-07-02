@@ -1,0 +1,5 @@
+ArrayList - Deve ser usado onde mais alterações de pesquisa são necessárias.
+LinkedList - Deve ser usado onde mais operações de inserção e exclusão são necessárias.
+HashSet - Não mantém a ordem dos elementos.
+LinkedHashSet - Mantém a ordem de inserção dos elementos.
+TreeSet - Matem a ordem natural dos elementos.
