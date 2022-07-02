@@ -1,0 +1,97 @@
+//Dado os modelos dos carros e seus respectivos consumos na entrada, faça:
+/* modelo = gol -consumo = 14,4 km/l
+ * modelo = uno - consumo = 15,6 km/l
+ * modelo = mobi - consumo = 16,1 km/l
+ * modelo = hb20 - consumo = 14,5 km/l
+ * modelo = kwid - consumo = 15,6 km/l
+ */
+package Collections;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class map {
+    public static void main(String[] args) {
+        //Maneiras de declarar
+        // Map carros = new HashMap(); //Jdk 5
+        // Map<String, Double> carros = new HashMap<>();
+        // HashMap<String, Double> carros = new HashMap<>();
+        // Map<String, Double> carros = Map.of(str, dou);
+        System.out.println("Crie um dicionário que relacione os modelos e seus respectivos consumos: " );
+        Map<String, Double> carrosPopulares = new HashMap<>(){{
+            put("gol", 14.4); //Adicionar dados a um Dicionário
+            put("uno", 15.6);
+            put("mobi", 16.1);
+            put("hb20", 14.5);
+            put("kwid", 15.6);
+        }};
+        System.out.println(carrosPopulares);
+        System.out.println(carrosPopulares.toString());
+        System.out.println("Substitua o consumo do gol por 15,2 km/l");
+        carrosPopulares.put("gol", 15.2);
+        System.out.println(carrosPopulares);
+        System.out.println("Confira se o modelo tucson está adicionado: " + carrosPopulares.containsKey("tucson"));
+        System.out.println("Exiba o consumo do uno: " + carrosPopulares.get("uno"));
+        System.out.println("Exiba os modelos: ");
+        Set<String> modelos = carrosPopulares.keySet();
+        System.out.println(modelos.toString());
+        System.out.println("Exiba os consumos dos carros: ");
+        Collection<Double> consumos = carrosPopulares.values();
+        System.out.println(consumos);
+        //Pegar valor maior e chave
+        System.out.println("Exiba o modelo mais econômico e seu consumo: ");
+        Double consumoME = Collections.max(carrosPopulares.values());
+        Set<Map.Entry<String,Double>> entries = carrosPopulares.entrySet();
+        String modeloME = ""; //Variável de controle
+        for (Map.Entry<String,Double> entry : entries) {
+            if(entry.getValue().equals(consumoME)) modeloME = entry.getKey();
+            System.out.println("Modelo mais eficiente: " + modeloME + " - " + consumoME);
+        }
+        //Fim
+        System.out.println("Exiba o modelo menos econômico e seu consumo: ");
+        String modeloMeE = "";
+        Double consumoMeE = Collections.min(carrosPopulares.values());
+        for (Map.Entry<String,Double> entry : carrosPopulares.entrySet()) {
+            if(entry.getValue().equals(consumoMeE)) {
+                modeloMeE = entry.getKey();
+                System.out.println("Modelo menos econômico e seu consumo: " + modeloMeE + " - " + consumoMeE);
+            }
+        }
+        //Soma dos valores
+        Iterator<Double> iterator = carrosPopulares.values().iterator();
+        Double soma = 0d;
+        while(iterator.hasNext()) {
+            soma += iterator.next();
+        }
+        System.out.println("Exiba a soma dos consumos: " + soma);
+        //Fim
+        System.out.println("Exiba a média dos consumos deste dicionário de carros: " +(soma/carrosPopulares.size()));
+        System.out.println("Remova os modelos com o consumo igual a 15.6 km/l: ");
+        Iterator<Double> iterator1 = carrosPopulares.values().iterator();
+        while(iterator1.hasNext()) {
+            if (iterator1.next().equals(15.6)) iterator1.remove(); //Equals verifica se e igual
+        }
+        System.out.println(carrosPopulares);
+        System.out.println("Exiba todos os carros na ordem que foram informados: ");
+        Map<String, Double> carrosPopulares1 = new LinkedHashMap<>() {{
+            put("gol", 14.4); //Adicionar dados a um Dicionário
+            put("uno", 15.6);
+            put("mobi", 16.1);
+            put("hb20", 14.5);
+            put("kwid", 15.6);
+        }};
+        System.out.println(carrosPopulares1);
+        System.out.println("Exiba o dicionário ordenado pelo modelo: ");
+        Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
+        System.out.println(carrosPopulares2.toString());
+        System.out.println("Apague o dicionário de carros: ");
+        carrosPopulares.clear();
+        System.out.println("Confira se o dicionário esta vazio: " + carrosPopulares.isEmpty());
+    }
+}

@@ -3,3 +3,4 @@ LinkedList - Deve ser usado onde mais operações de inserção e exclusão são
 HashSet - Não mantém a ordem dos elementos.
 LinkedHashSet - Mantém a ordem de inserção dos elementos.
 TreeSet - Matem a ordem natural dos elementos.
+Map - Bit o Notation - HashMap e LinkedMap tem a mesma performance
