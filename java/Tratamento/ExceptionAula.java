@@ -4,9 +4,7 @@ import java.io.*;
 
 import javax.swing.*;
 
-public class Exception {
-    public Exception(String string) {
-    }
+public class ExceptionAula {
     public static void main(String[] args) {
         String nomeArquivo = JOptionPane.showInputDialog("Nome do arquivo a ser exibido");
         imprimirArquivo(nomeArquivo);
@@ -24,8 +22,8 @@ public class Exception {
             bw.flush();
             br.close();
         } catch (FailOpenFileException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }catch (IOException e) {
             JOptionPane.showMessageDialog(null,"Ocorreu um erro inesperado, por favor entre em contato com o suporte." + e.getMessage());
         }
     }
